@@ -17,7 +17,7 @@ export function MakeKitButton({
   "aria-label"?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-[8px] border-[1.5px] border-app-border select-none disabled:opacity-40 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center gap-[8px] rounded-full border-[1.5px] border-app-border select-none disabled:opacity-40 disabled:cursor-not-allowed";
   const sizes = size === "sm" ? "px-[14px] py-[8px] text-[13px]" : "px-[20px] py-[10px] text-[15px]";
   const styles = {
     primary: "bg-app-ink text-app-ink-fg hover:bg-app-ink-hover",
@@ -63,7 +63,7 @@ export function MakeKitTag({
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.92 }}
       transition={{ type: "spring", stiffness: 600, damping: 24 }}
-      className={`inline-flex items-center gap-[6px] border-[1.5px] px-[12px] py-[8px] text-[13px] min-h-[36px] ${colors}`}
+      className={`inline-flex items-center gap-[6px] rounded-full border-[1.5px] px-[12px] py-[8px] text-[13px] min-h-[36px] ${colors}`}
     >
       {children}
     </motion.button>
