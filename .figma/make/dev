@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "Starting Vite development server on port ${PORT:-5173}"
-# --strictPort so the server stays on the port Make Local expects (fails
-# instead of silently picking another). No --open: Make Local has its own browser.
-pnpm run dev -- --host --port "${PORT:-5173}" --strictPort
+echo "Starting Vite development server on port ${PORT:-5174}"
+# Invoke Vite directly via pnpm exec (not `pnpm run dev -- …`, which forwards the
+# `--` separator into Vite and makes it ignore the port flags).
+# --strictPort so the server stays on the port Make Local expects (fails instead
+# of silently picking another). No --open: Make Local has its own browser.
+pnpm exec vite --host --port "${PORT:-5174}" --strictPort
