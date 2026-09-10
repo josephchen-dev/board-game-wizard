@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+# Vite serves the app (index.html) at the root path; there is no /health route.
+PORT="${PORT:-5173}"
+HEALTHCHECK_ENDPOINT="http://localhost:${PORT}/"
+MAX_WAIT=120 # 2 minutes
+INTERVAL=2
+ELAPSED=0
+
+echo "Waiting for development server to be ready at ${HEALTHCHECK_ENDPOINT}"
+
+while [ $ELAPSED -lt $MAX_WAIT ]; do
+  if curl -sf "$HEALTHCHECK_ENDPOINT" >/dev/null 2>&1; then
+    echo "Dev server is up"
+    exit 0
+  fi
+  sleep $INTERVAL
+  ELAPSED=$((ELAPSED + INTERVAL))
+done
+
+echo "Error: Dev server did not start within ${MAX_WAIT}s"
+exit 1

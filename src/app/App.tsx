@@ -95,7 +95,7 @@ export default function App() {
               {/* SC 2.4.1 / 1.3.6: landmark labels distinguish multiple regions */}
               <main
                 aria-label="Game finder wizard"
-                className="border-[1.5px] border-app-border bg-app-surface p-[32px] md:p-[48px] flex flex-col gap-[32px] min-h-[560px]"
+                className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface p-[32px] md:p-[48px] flex flex-col gap-[32px] min-h-[560px]"
               >
                 <div className="flex flex-col gap-[16px]">
                   <ProgressBar value={progress} step={step + 1} total={total} />
@@ -210,9 +210,9 @@ export default function App() {
 
 function Header({ onReset }: { onReset: () => void }) {
   return (
-    <header className="flex items-center justify-between border-[1.5px] border-app-border bg-app-surface px-[20px] py-[14px]">
+    <header className="flex items-center justify-between rounded-[30px] border-[1.5px] border-app-border bg-app-surface px-[20px] py-[14px]">
       <div className="flex items-center gap-[12px]">
-        <div className="size-[36px] border-[1.5px] border-app-border bg-app-accent flex items-center justify-center" aria-hidden="true">
+        <div className="size-[36px] rounded-[30px] border-[1.5px] border-app-border bg-app-accent flex items-center justify-center" aria-hidden="true">
           <Dice5 size={22} strokeWidth={2} className="text-app-accent-fg" />
         </div>
         <div className="flex flex-col">
@@ -260,7 +260,7 @@ function Sidebar({
       <div className="flex flex-col gap-[16px]">
         {/* SC 4.1.3: live region so AT announces count updates */}
         <div
-          className="border-[1.5px] border-app-border bg-app-ink text-app-ink-fg p-[24px]"
+          className="rounded-[30px] border-[1.5px] border-app-border bg-app-ink text-app-ink-fg p-[24px]"
           role="status"
           aria-live="polite"
           aria-atomic="true"
@@ -269,16 +269,16 @@ function Sidebar({
           <div className="text-[12px] uppercase tracking-[0.08em] opacity-70" aria-hidden="true">Live match count</div>
           <div className="text-[72px] leading-none tabular-nums mt-[8px]" aria-hidden="true">{liveCount}</div>
           <div className="text-[13px] opacity-80 mt-[4px]" aria-hidden="true">out of {GAMES.length} games</div>
-          <div className="h-[6px] bg-app-ink-fg/20 mt-[16px]" aria-hidden="true">
+          <div className="h-[6px] rounded-[30px] overflow-hidden bg-app-ink-fg/20 mt-[16px]" aria-hidden="true">
             <div
-              className="h-full bg-app-positive transition-all"
+              className="h-full rounded-[30px] bg-app-positive transition-all"
               style={{ width: `${Math.min(100, (liveCount / GAMES.length) * 100)}%` }}
             />
           </div>
         </div>
 
         <nav aria-label="Jump to filter step">
-          <div className="border-[1.5px] border-app-border bg-app-surface p-[20px] flex flex-col gap-[10px]">
+          <div className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface p-[20px] flex flex-col gap-[10px]">
             <div className="text-[12px] uppercase tracking-[0.08em] text-app-text-muted" aria-hidden="true">
               Your filters
             </div>
@@ -305,7 +305,7 @@ function Sidebar({
 
 function Footer() {
   return (
-    <footer className="border-[1.5px] border-app-border bg-app-surface px-[20px] py-[14px] flex items-center justify-between text-[12px] text-app-text-muted">
+    <footer className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface px-[20px] py-[14px] flex items-center justify-between text-[12px] text-app-text-muted">
       <span>Built with the Make Kit · {GAMES.length} games · 6 filter dimensions</span>
       <span className="tracking-[0.12em] uppercase">v 1.0</span>
     </footer>

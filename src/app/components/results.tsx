@@ -39,7 +39,7 @@ export function ResultsView({
       <div className="flex items-end justify-between gap-[16px] flex-wrap">
         <div className="flex flex-col gap-[8px]">
           <div className="text-[12px] tracking-[0.08em] uppercase" aria-hidden="true">
-            <span className="border-[1.5px] border-app-border px-[8px] py-[2px] bg-app-positive text-app-positive-fg">
+            <span className="rounded-[30px] border-[1.5px] border-app-border px-[8px] py-[2px] bg-app-positive text-app-positive-fg">
               Match
             </span>
           </div>
@@ -66,7 +66,7 @@ export function ResultsView({
       {matches.length === 0 ? (
         <div
           role="status"
-          className="border-[1.5px] border-app-border p-[48px] bg-app-accent text-center flex flex-col gap-[12px] items-center"
+          className="rounded-[30px] border-[1.5px] border-app-border p-[48px] bg-app-accent text-center flex flex-col gap-[12px] items-center"
         >
           <div className="text-[32px] text-app-accent-fg">No games matched.</div>
           <div className="text-[15px] max-w-[420px] text-app-accent-fg">
@@ -103,7 +103,7 @@ function GameCard({ game, rank, onOpen }: { game: Game; rank: number; onOpen: (i
           onOpen(game.id);
         }
       }}
-      className="border-[1.5px] border-app-border bg-app-surface flex flex-col h-full cursor-pointer transition-transform hover:-translate-y-[2px] focus-visible:-translate-y-[2px]"
+      className="rounded-[30px] overflow-hidden border-[1.5px] border-app-border bg-app-surface flex flex-col h-full cursor-pointer transition-transform hover:-translate-y-[2px] focus-visible:-translate-y-[2px]"
       aria-label={`${game.name}, ranked ${rank}. View details`}
     >
       <div className="aspect-[16/10] border-b-[1.5px] border-app-border relative flex items-end p-[14px] overflow-hidden">
@@ -120,14 +120,14 @@ function GameCard({ game, rank, onOpen }: { game: Game; rank: number; onOpen: (i
           style={{ background: "var(--app-card-overlay)" }}
         />
         <div
-          className="absolute top-[10px] left-[10px] bg-app-surface border-[1.5px] border-app-border px-[8px] py-[2px] text-[12px] tabular-nums z-10 text-app-text-primary"
+          className="absolute top-[10px] left-[10px] bg-app-surface rounded-[30px] border-[1.5px] border-app-border px-[8px] py-[2px] text-[12px] tabular-nums z-10 text-app-text-primary"
           aria-hidden="true"
         >
           #{rank}
         </div>
         {/* SC 1.1.1 / 4.1.2: icon is decorative; rating text is the information */}
         <div
-          className="absolute top-[10px] right-[10px] bg-app-ink text-app-ink-fg border-[1.5px] border-app-border px-[8px] py-[2px] text-[12px] flex items-center gap-[4px] z-10"
+          className="absolute top-[10px] right-[10px] bg-app-ink text-app-ink-fg rounded-[30px] border-[1.5px] border-app-border px-[8px] py-[2px] text-[12px] flex items-center gap-[4px] z-10"
           aria-label={`Rating: ${game.rating.toFixed(1)} out of 10`}
         >
           <Star size={12} fill="white" aria-hidden="true" />
@@ -143,7 +143,7 @@ function GameCard({ game, rank, onOpen }: { game: Game; rank: number; onOpen: (i
         </div>
         <div className="flex flex-wrap gap-[6px]" aria-label="Categories">
           {game.categories.slice(0, 3).map((c) => (
-            <span key={c} className="border-[1px] border-app-border px-[8px] py-[1px] text-[11px] text-app-text-primary">
+            <span key={c} className="rounded-[30px] border-[1px] border-app-border px-[8px] py-[1px] text-[11px] text-app-text-primary">
               {c}
             </span>
           ))}

@@ -1,0 +1,74 @@
+{
+  "pointAndEdit": {
+    "priorityPaths": {
+      "prefer": [
+        "src/app/App.tsx",
+        "src/app/components/**/*.{tsx,ts,jsx,js}"
+      ],
+      "deprioritize": [
+        "src/imports/**",
+        "src/main.tsx",
+        "src/app/data/**"
+      ],
+      "exclude": [
+        "node_modules/**",
+        "dist/**",
+        "src/styles/**",
+        "**/*.config.{ts,js,mjs,cjs}",
+        "pnpm-workspace.yaml",
+        "postcss.config.mjs"
+      ]
+    },
+    "libraryPaths": {
+      "local": [],
+      "external": [
+        "node_modules/.pnpm/@emotion+styled@*/node_modules/@emotion/styled/**",
+        "node_modules/.pnpm/@emotion+react@*/node_modules/@emotion/react/**",
+        "node_modules/.pnpm/cmdk@*/node_modules/cmdk/**",
+        "node_modules/.pnpm/input-otp@*/node_modules/input-otp/**",
+        "node_modules/.pnpm/vaul@*/node_modules/vaul/**",
+        "node_modules/.pnpm/sonner@*/node_modules/sonner/**",
+        "node_modules/.pnpm/lucide-react@*/node_modules/lucide-react/**",
+        "node_modules/.pnpm/recharts@*/node_modules/recharts/**"
+      ]
+    },
+    "pathClassification": {
+      "classifier": "sonnet"
+    },
+    "exclusions": [
+      {
+        "glob": "node_modules/**",
+        "reason": "Third-party dependency code; not an editable UI source anchor for this project."
+      },
+      {
+        "glob": "dist/**",
+        "reason": "Build output; not source and must not be selected as an edit anchor."
+      },
+      {
+        "glob": "src/styles/**",
+        "reason": "Pure CSS files containing global styles and theme variables; no component rendering surfaces."
+      },
+      {
+        "glob": "**/*.config.{ts,js,mjs,cjs}",
+        "reason": "Tooling configuration files (vite, postcss, etc.); not UI rendering surfaces."
+      },
+      {
+        "glob": "pnpm-workspace.yaml",
+        "reason": "Package manager workspace configuration; not UI source."
+      },
+      {
+        "glob": "postcss.config.mjs",
+        "reason": "PostCSS build tooling configuration; not a UI rendering surface."
+      }
+    ],
+    "generated": {
+      "schemaVersion": 2,
+      "source": "setup-agent.point-and-edit-path-classifier",
+      "prompt": "same-turn-setup-subagent-v5",
+      "model": "claude-sonnet-4-6",
+      "createdAt": "2026-09-10T00:00:00.000Z",
+      "confidence": 0.93,
+      "explanation": "The repository has a clear, flat single-package structure with all active app UI concentrated under src/app/, making classification straightforward and high-confidence; the only ambiguity is the Figma Make import folder in src/imports/ which is deprioritized rather than excluded because it is valid React source."
+    }
+  }
+}

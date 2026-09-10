@@ -6,60 +6,60 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Roboto Mono", ui-monospace, monospace;
 
-  /* Shadcn/Tailwind token bridge */
-  --background: #ffffff;
-  --foreground: #1e1e1e;
+  /* Shadcn/Tailwind token bridge — Rivian theme */
+  --background: #ece7dd;
+  --foreground: #1a211c;
   --card: #ffffff;
-  --card-foreground: #1e1e1e;
+  --card-foreground: #1a211c;
   --popover: #ffffff;
-  --popover-foreground: #000000;
-  --primary: #2c2c2c;
-  --primary-foreground: #f5f5f5;
-  --secondary: #e6e6e6;
-  --secondary-foreground: #1e1e1e;
-  --muted: #d9d9d9;
-  --muted-foreground: #b3b3b3;
-  --accent: #14ae5c;
-  --accent-foreground: #ebffee;
+  --popover-foreground: #1a211c;
+  --primary: #1a211c;
+  --primary-foreground: #f4f1e9;
+  --secondary: #e7e1d5;
+  --secondary-foreground: #1a211c;
+  --muted: #dad3c4;
+  --muted-foreground: #6b746c;
+  --accent: #ffd400;
+  --accent-foreground: #1a211c;
   --destructive: #ec221f;
   --destructive-foreground: #fee9e7;
-  --border: #d9d9d9;
+  --border: rgba(26, 33, 28, 0.15);
   --input: #ffffff;
   --input-background: #ffffff;
-  --ring: #2c2c2c;
-  --radius: 8px;
+  --ring: #1a211c;
+  --radius: 30px;
 
   /* ─── App Tokens ──────────────────────────────────────────────────────── */
 
-  /* Page */
-  --app-bg:           #f4ede0;
+  /* Page — warm Rivian sand/stone */
+  --app-bg:           #ece7dd;
 
-  /* Yellow accent (Make Kit highlight) */
-  --app-accent:       #FFD43B;
-  --app-accent-fg:    #1e1e1e;
+  /* Rivian compass yellow accent */
+  --app-accent:       #ffd400;
+  --app-accent-fg:    #1a211c;
 
-  /* Positive / match green */
-  --app-positive:     #14ae5c;
+  /* Positive / match — Rivian forest green */
+  --app-positive:     #3c6e47;
   --app-positive-fg:  #ffffff;
 
-  /* Make Kit bold border */
-  --app-border-color: #000000;
+  /* Border — deep forest ink */
+  --app-border-color: #1a211c;
   --app-border-width: 1.5px;
 
   /* Text hierarchy */
-  --app-text-primary:   #1e1e1e;
-  --app-text-secondary: #444444;
-  --app-text-muted:     #6b6b6b;
+  --app-text-primary:   #1a211c;
+  --app-text-secondary: #404a43;
+  --app-text-muted:     #6b746c;
 
   /* Surfaces */
   --app-surface:      #ffffff;
-  --app-surface-hover: #f5f5f5;
-  --app-surface-warm: #faf5e8;
+  --app-surface-hover: #f5f2eb;
+  --app-surface-warm: #f7f2e7;
 
-  /* Ink (dark/black blocks) */
-  --app-ink:          #000000;
-  --app-ink-hover:    #2c2c2c;
-  --app-ink-fg:       #ffffff;
+  /* Ink — dark forest blocks */
+  --app-ink:          #1a211c;
+  --app-ink-hover:    #28332c;
+  --app-ink-fg:       #f4f1e9;
 
   /* ─── Typography Scale ────────────────────────────────────────────────── */
   --scale-01: 12px;

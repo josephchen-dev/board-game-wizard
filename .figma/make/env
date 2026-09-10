@@ -1,0 +1,3 @@
+PORT=5173
+FIGMA_MAKE_URL=http://localhost:5173
+MAKE_LOCAL_URL=http://localhost:5173

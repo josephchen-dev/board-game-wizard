@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Pin the port so the preview URL stays stable across sessions.
+# --strictPort fails loudly instead of silently drifting to another port.
+PORT="${PORT:-5173}"
+
+# Launch Vite directly via `pnpm exec` rather than `pnpm run dev`, which would
+# re-run pnpm's pre-run deps check and hit the same build-approval gate.
+echo "Starting Vite dev server on port ${PORT}"
+exec pnpm exec vite --port "$PORT" --strictPort

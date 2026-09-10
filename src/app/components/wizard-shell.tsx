@@ -17,7 +17,7 @@ export function MakeKitButton({
   "aria-label"?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-[8px] border-[1.5px] border-app-border select-none disabled:opacity-40 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center gap-[8px] rounded-[30px] border-[1.5px] border-app-border select-none disabled:opacity-40 disabled:cursor-not-allowed";
   const sizes = size === "sm" ? "px-[14px] py-[8px] text-[13px]" : "px-[20px] py-[10px] text-[15px]";
   const styles = {
     primary: "bg-app-ink text-app-ink-fg hover:bg-app-ink-hover",
@@ -63,7 +63,7 @@ export function MakeKitTag({
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.92 }}
       transition={{ type: "spring", stiffness: 600, damping: 24 }}
-      className={`inline-flex items-center gap-[6px] border-[1.5px] px-[12px] py-[8px] text-[13px] min-h-[36px] ${colors}`}
+      className={`inline-flex items-center gap-[6px] rounded-[30px] border-[1.5px] px-[12px] py-[8px] text-[13px] min-h-[36px] ${colors}`}
     >
       {children}
     </motion.button>
@@ -84,7 +84,7 @@ export function StepHeader({
   return (
     <div className="flex flex-col gap-[12px]">
       <div className="flex items-center gap-[10px] text-[12px] tracking-[0.08em] uppercase" aria-hidden="true">
-        <span className="border-[1.5px] border-app-border px-[8px] py-[2px] bg-app-accent text-app-accent-fg">
+        <span className="rounded-[30px] border-[1.5px] border-app-border px-[8px] py-[2px] bg-app-accent text-app-accent-fg">
           Step {String(step).padStart(2, "0")}
         </span>
         <span className="text-app-text-muted">of {String(total).padStart(2, "0")}</span>
@@ -106,9 +106,9 @@ export function ProgressBar({ value, step, total }: { value: number; step?: numb
       aria-valuemin={0}
       aria-valuemax={100}
       aria-label={label}
-      className="w-full h-[10px] border-[1.5px] border-app-border bg-app-surface"
+      className="w-full h-[10px] rounded-[30px] border-[1.5px] border-app-border bg-app-surface overflow-hidden"
     >
-      <div className="h-full bg-app-ink transition-all" style={{ width: `${value}%` }} />
+      <div className="h-full rounded-[30px] bg-app-ink transition-all" style={{ width: `${value}%` }} />
     </div>
   );
 }

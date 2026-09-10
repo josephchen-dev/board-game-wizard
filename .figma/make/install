@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+echo "Installing project dependencies with pnpm"
+
+# pnpm's native-build approval gate (ERR_PNPM_IGNORED_BUILDS) hard-fails a clean
+# install here for @tailwindcss/oxide and esbuild, even though the repo already
+# allow-lists them in pnpm-workspace.yaml. Their platform binaries ship via
+# optional dependencies, so don't let the gate abort bootstrap...
+pnpm install --config.strict-dep-builds=false
+
+# ...and then run those allow-listed build scripts explicitly (no-op if already
+# built) so the native toolchain is genuinely in place for Vite.
+pnpm rebuild @tailwindcss/oxide esbuild
+
+echo "Dependencies installed"

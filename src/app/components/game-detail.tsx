@@ -52,7 +52,7 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
       </MakeKitButton>
 
       {/* Hero */}
-      <header className="border-[1.5px] border-app-border bg-app-surface overflow-hidden">
+      <header className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface overflow-hidden">
         <div className="aspect-[21/9] relative flex items-end p-[24px] md:p-[32px] overflow-hidden">
           <img
             src={game.image}
@@ -65,7 +65,7 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
               {game.categories.map((c) => (
                 <span
                   key={c}
-                  className="border-[1.5px] border-app-border bg-app-accent text-app-accent-fg px-[8px] py-[2px] text-[11px] uppercase tracking-[0.06em]"
+                  className="rounded-[30px] border-[1.5px] border-app-border bg-app-accent text-app-accent-fg px-[8px] py-[2px] text-[11px] uppercase tracking-[0.06em]"
                 >
                   {c}
                 </span>
@@ -85,7 +85,7 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
       <section aria-label="Quick facts">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[12px]">
           {facts.map((f) => (
-            <div key={f.label} className="border-[1.5px] border-app-border bg-app-surface p-[16px] flex flex-col gap-[8px]">
+            <div key={f.label} className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface p-[16px] flex flex-col gap-[8px]">
               <div className="flex items-center gap-[8px] text-app-text-primary">
                 {f.icon}
                 <span className="text-[11px] uppercase tracking-[0.06em] text-app-text-muted">{f.label}</span>
@@ -100,9 +100,9 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-[24px]">
         <div className="flex flex-col gap-[24px]">
           {/* Background */}
-          <section aria-labelledby="bg-heading" className="border-[1.5px] border-app-border bg-app-surface p-[24px] md:p-[32px] flex flex-col gap-[12px]">
+          <section aria-labelledby="bg-heading" className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface p-[24px] md:p-[32px] flex flex-col gap-[12px]">
             <div className="flex items-center gap-[10px]" id="bg-heading">
-              <span className="border-[1.5px] border-app-border bg-app-ink text-app-ink-fg px-[8px] py-[2px] text-[12px] uppercase tracking-[0.08em]">
+              <span className="rounded-[30px] border-[1.5px] border-app-border bg-app-ink text-app-ink-fg px-[8px] py-[2px] text-[12px] uppercase tracking-[0.08em]">
                 Background
               </span>
             </div>
@@ -110,9 +110,9 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
           </section>
 
           {/* Gameplay */}
-          <section aria-labelledby="gp-heading" className="border-[1.5px] border-app-border bg-app-surface p-[24px] md:p-[32px] flex flex-col gap-[16px]">
+          <section aria-labelledby="gp-heading" className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface p-[24px] md:p-[32px] flex flex-col gap-[16px]">
             <div className="flex items-center gap-[10px]" id="gp-heading">
-              <span className="border-[1.5px] border-app-border bg-app-accent text-app-accent-fg px-[8px] py-[2px] text-[12px] uppercase tracking-[0.08em]">
+              <span className="rounded-[30px] border-[1.5px] border-app-border bg-app-accent text-app-accent-fg px-[8px] py-[2px] text-[12px] uppercase tracking-[0.08em]">
                 Gameplay
               </span>
             </div>
@@ -129,9 +129,9 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
 
         {/* Quick mechanics guide */}
         <aside aria-labelledby="mech-heading">
-          <section className="border-[1.5px] border-app-border bg-app-surface-warm p-[24px] flex flex-col gap-[16px]">
+          <section className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface-warm p-[24px] flex flex-col gap-[16px]">
             <div className="flex items-center gap-[10px]" id="mech-heading">
-              <span className="border-[1.5px] border-app-border bg-app-positive text-app-positive-fg px-[8px] py-[2px] text-[12px] uppercase tracking-[0.08em]">
+              <span className="rounded-[30px] border-[1.5px] border-app-border bg-app-positive text-app-positive-fg px-[8px] py-[2px] text-[12px] uppercase tracking-[0.08em]">
                 Quick mechanics guide
               </span>
             </div>
@@ -139,7 +139,7 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
               {game.mechanics.map((m, idx) => (
                 <li key={m} className="flex items-start gap-[12px]">
                   <span
-                    className="shrink-0 size-[24px] border-[1.5px] border-app-border bg-app-ink text-app-ink-fg flex items-center justify-center text-[12px] tabular-nums"
+                    className="shrink-0 size-[24px] rounded-[30px] border-[1.5px] border-app-border bg-app-ink text-app-ink-fg flex items-center justify-center text-[12px] tabular-nums"
                     aria-hidden="true"
                   >
                     {idx + 1}
@@ -150,7 +150,7 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
             </ol>
             <div className="flex flex-wrap gap-[6px] border-t-[1px] border-border pt-[16px]" aria-label="Mood tags">
               {game.mood.map((m) => (
-                <span key={m} className="border-[1px] border-app-border px-[8px] py-[1px] text-[11px] text-app-text-primary">
+                <span key={m} className="rounded-[30px] border-[1px] border-app-border px-[8px] py-[1px] text-[11px] text-app-text-primary">
                   {m}
                 </span>
               ))}

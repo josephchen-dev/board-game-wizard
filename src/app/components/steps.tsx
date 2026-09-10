@@ -108,7 +108,7 @@ export function StepAge({ filters, set }: { filters: Filters; set: (f: Filters) 
             role="radio"
             aria-checked={active}
             onClick={() => set({ ...filters, ageGroup: g.id })}
-            className={`text-left border-[1.5px] border-app-border p-[20px] transition-colors ${
+            className={`text-left rounded-[30px] border-[1.5px] border-app-border p-[20px] transition-colors ${
               active
                 ? "bg-app-ink text-app-ink-fg"
                 : "bg-app-surface text-app-text-primary hover:bg-app-surface-hover"
@@ -165,7 +165,7 @@ export function StepDifficulty({ filters, set }: { filters: Filters; set: (f: Fi
                 else if (active) setRange(l.v, l.v);
                 else setRange(Math.min(filters.weight[0], l.v), Math.max(filters.weight[1], l.v));
               }}
-              className={`border-[1.5px] border-app-border p-[16px] text-left transition-colors ${
+              className={`rounded-[30px] border-[1.5px] border-app-border p-[16px] text-left transition-colors ${
                 active
                   ? "bg-app-positive text-app-positive-fg"
                   : "bg-app-surface text-app-text-primary hover:bg-app-surface-hover"
@@ -190,7 +190,7 @@ export function StepTime({ filters, set }: { filters: Filters; set: (f: Filters)
   const learnLabel = filters.learnTime >= 60 ? "any length" : `up to ${filters.learnTime} minutes`;
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
-      <div className="border-[1.5px] border-app-border p-[24px] bg-app-surface flex flex-col gap-[16px]">
+      <div className="rounded-[30px] border-[1.5px] border-app-border p-[24px] bg-app-surface flex flex-col gap-[16px]">
         <div className="flex items-center gap-[12px]">
           <Clock size={24} strokeWidth={1.75} className="text-app-text-primary" aria-hidden="true" />
           <span className="text-[14px] uppercase tracking-[0.08em] text-app-text-primary" id="play-time-label">
@@ -215,7 +215,7 @@ export function StepTime({ filters, set }: { filters: Filters; set: (f: Filters)
           <span>15m</span><span>1h</span><span>2h</span><span>Any</span>
         </div>
       </div>
-      <div className="border-[1.5px] border-app-border p-[24px] bg-app-accent flex flex-col gap-[16px]">
+      <div className="rounded-[30px] border-[1.5px] border-app-border p-[24px] bg-app-accent flex flex-col gap-[16px]">
         <div className="flex items-center gap-[12px]">
           <GraduationCap size={24} strokeWidth={1.75} className="text-app-accent-fg" aria-hidden="true" />
           <span className="text-[14px] uppercase tracking-[0.08em] text-app-accent-fg" id="learn-time-label">
@@ -266,7 +266,7 @@ export function StepMood({ filters, set }: { filters: Filters; set: (f: Filters)
           </MakeKitTag>
         ))}
       </div>
-      <div className="border-[1.5px] border-app-border p-[20px] flex flex-col gap-[12px] bg-app-surface">
+      <div className="rounded-[30px] border-[1.5px] border-app-border p-[20px] flex flex-col gap-[12px] bg-app-surface">
         <div className="flex items-center gap-[10px]">
           <Star size={20} strokeWidth={1.75} className="text-app-text-primary" aria-hidden="true" />
           <span
