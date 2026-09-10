@@ -51,7 +51,7 @@ export function ResultsView({
           >
             {matchText}
           </h1>
-          <p className="text-[16px] text-app-text-secondary">From {GAMES.length} candidates worldwide.</p>
+          <p className="text-[16px] text-app-text-secondary">From {GAMES.length} candidates across the Adventure Network.</p>
         </div>
         <div className="flex gap-[10px]">
           <MakeKitButton variant="neutral" onClick={onBack} aria-label="Go back and tweak filters">
@@ -68,9 +68,10 @@ export function ResultsView({
           role="status"
           className="rounded-[30px] border-[1.5px] border-app-border p-[48px] bg-app-accent text-center flex flex-col gap-[12px] items-center"
         >
-          <div className="text-[32px] text-app-accent-fg">No games matched.</div>
+          <div className="text-[32px] text-app-accent-fg">No games on this trail.</div>
           <div className="text-[15px] max-w-[420px] text-app-accent-fg">
-            Loosen a filter — try a wider weight range, more time, or fewer required categories.
+            Switch to Conserve mode and widen the search — a broader weight range, more time,
+            or fewer required categories will get you back in range.
           </div>
           <MakeKitButton onClick={onBack} aria-label="Go back and adjust filters">← Adjust filters</MakeKitButton>
         </div>

@@ -155,6 +155,9 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
                 </span>
               ))}
             </div>
+            <p className="text-[11px] uppercase tracking-[0.08em] text-app-text-muted">
+              Packs neatly into an R1S Gear Tunnel — ready for the next trailhead.
+            </p>
           </section>
         </aside>
       </div>

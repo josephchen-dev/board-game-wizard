@@ -26,7 +26,7 @@
   --border: rgba(26, 33, 28, 0.15);
   --input: #ffffff;
   --input-background: #ffffff;
-  --ring: #1a211c;
+  --ring: #ffd400;
   --radius: 30px;
 
   /* ─── App Tokens ──────────────────────────────────────────────────────── */
@@ -115,10 +115,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus ring */
+/* Focus ring — Rivian compass yellow, with a thin ink halo so it stays
+   visible on light, yellow, and dark forest surfaces alike */
 :focus-visible {
-  outline: var(--stroke-focus) solid var(--ring);
+  outline: 3px solid var(--app-accent);
   outline-offset: 2px;
+  box-shadow: 0 0 0 1.5px var(--app-ink);
 }
 
 /* Range input accent */

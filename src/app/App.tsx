@@ -35,7 +35,7 @@ const STEPS = [
   {
     id: "difficulty",
     title: "How crunchy do you want it?",
-    subtitle: "Game weight runs 1 (light) to 5 (brain-burner) on BoardGameGeek.",
+    subtitle: "Game weight runs 1 (light) to 5 (brain-burner) — like dialing an R1T from Conserve to Off-Road.",
   },
   {
     id: "time",
@@ -208,27 +208,49 @@ export default function App() {
   );
 }
 
+const FLEET = ["R1T", "R1S", "R2", "R3", "R3X"];
+
 function Header({ onReset }: { onReset: () => void }) {
   return (
-    <header className="flex items-center justify-between rounded-[30px] border-[1.5px] border-app-border bg-app-surface px-[20px] py-[14px]">
-      <div className="flex items-center gap-[12px]">
-        <div className="size-[36px] rounded-[30px] border-[1.5px] border-app-border bg-app-accent flex items-center justify-center" aria-hidden="true">
-          <Dice5 size={22} strokeWidth={2} className="text-app-accent-fg" />
+    <header
+      className="relative overflow-hidden rounded-[30px] border-[1.5px] border-app-border bg-app-ink text-app-ink-fg px-[24px] py-[22px]"
+      style={{ background: "radial-gradient(130% 150% at 100% 0%, #28332c 0%, #1a211c 58%)" }}
+    >
+      <div className="flex items-center justify-between gap-[16px] flex-wrap">
+        <div className="flex items-center gap-[14px]">
+          <div className="size-[40px] rounded-[30px] border-[1.5px] border-app-accent bg-app-accent flex items-center justify-center" aria-hidden="true">
+            <Dice5 size={24} strokeWidth={2} className="text-app-accent-fg" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[19px] leading-none tracking-[-0.01em]">Tabletop Sieve</span>
+            <span className="text-[11px] tracking-[0.12em] uppercase text-app-ink-fg/60">
+              Adventure-grade board-game finder
+            </span>
+          </div>
         </div>
-        <div className="flex flex-col">
-          <span className="text-[18px] leading-none tracking-[-0.01em] text-app-text-primary">Tabletop Sieve</span>
-          <span className="text-[11px] tracking-[0.12em] uppercase text-app-text-muted">
-            A Make Kit board-game finder
+        <div className="flex items-center gap-[12px]">
+          <span className="hidden md:inline text-[12px] text-app-ink-fg/60" aria-hidden="true">
+            {GAMES.length} games in range
           </span>
+          <MakeKitButton variant="subtle" size="sm" onClick={onReset} aria-label="Reset all filters and start over">
+            <RotateCcw size={14} aria-hidden="true" /> Reset
+          </MakeKitButton>
         </div>
       </div>
-      <div className="flex items-center gap-[10px]">
-        <span className="hidden md:inline text-[12px] text-app-text-muted" aria-hidden="true">
-          {GAMES.length} games indexed
+
+      {/* Rivian fleet — tuned for every trail */}
+      <div className="mt-[18px] flex items-center gap-[8px] flex-wrap" aria-hidden="true">
+        <span className="text-[10px] uppercase tracking-[0.16em] text-app-ink-fg/45 mr-[2px]">
+          Tuned for the fleet
         </span>
-        <MakeKitButton variant="subtle" size="sm" onClick={onReset} aria-label="Reset all filters and start over">
-          <RotateCcw size={14} aria-hidden="true" /> Reset
-        </MakeKitButton>
+        {FLEET.map((v) => (
+          <span
+            key={v}
+            className="rounded-[30px] border-[1px] border-app-ink-fg/25 px-[11px] py-[3px] text-[11px] tracking-[0.08em] text-app-ink-fg/80"
+          >
+            {v}
+          </span>
+        ))}
       </div>
     </header>
   );
@@ -266,7 +288,7 @@ function Sidebar({
           aria-atomic="true"
           aria-label={`${liveCount} out of ${GAMES.length} games match your current filters`}
         >
-          <div className="text-[12px] uppercase tracking-[0.08em] opacity-70" aria-hidden="true">Live match count</div>
+          <div className="text-[12px] uppercase tracking-[0.08em] opacity-70" aria-hidden="true">Games in range</div>
           <div className="text-[72px] leading-none tabular-nums mt-[8px]" aria-hidden="true">{liveCount}</div>
           <div className="text-[13px] opacity-80 mt-[4px]" aria-hidden="true">out of {GAMES.length} games</div>
           <div className="h-[6px] rounded-[30px] overflow-hidden bg-app-ink-fg/20 mt-[16px]" aria-hidden="true">
@@ -306,8 +328,8 @@ function Sidebar({
 function Footer() {
   return (
     <footer className="rounded-[30px] border-[1.5px] border-app-border bg-app-surface px-[20px] py-[14px] flex items-center justify-between text-[12px] text-app-text-muted">
-      <span>Built with the Make Kit · {GAMES.length} games · 6 filter dimensions</span>
-      <span className="tracking-[0.12em] uppercase">v 1.0</span>
+      <span>Built with the Make Kit · {GAMES.length} games · Range-tested in the R1S</span>
+      <span className="tracking-[0.12em] uppercase">Adventure Network · v 1.0</span>
     </footer>
   );
 }
