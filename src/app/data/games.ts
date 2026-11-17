@@ -23,16 +23,16 @@ export type Game = {
 };
 
 const COVERS = [
-  "linear-gradient(135deg,#FFD43B,#FF6B35)",
-  "linear-gradient(135deg,#3B82F6,#1E1B4B)",
-  "linear-gradient(135deg,#14AE5C,#064E3B)",
-  "linear-gradient(135deg,#F472B6,#7C3AED)",
-  "linear-gradient(135deg,#FB923C,#7F1D1D)",
-  "linear-gradient(135deg,#22D3EE,#0F766E)",
-  "linear-gradient(135deg,#E11D48,#1E1E1E)",
-  "linear-gradient(135deg,#A7F3D0,#1E40AF)",
-  "linear-gradient(135deg,#FCD34D,#1E1E1E)",
-  "linear-gradient(135deg,#C084FC,#1E1B4B)",
+  "linear-gradient(135deg,#D9B27C,#8A5A33)",
+  "linear-gradient(135deg,#A9744A,#2E1C12)",
+  "linear-gradient(135deg,#C9A27A,#5A3A22)",
+  "linear-gradient(135deg,#E3C9A0,#7A4A28)",
+  "linear-gradient(135deg,#B5835A,#4A2A18)",
+  "linear-gradient(135deg,#CDB08A,#6B4A32)",
+  "linear-gradient(135deg,#9C6B43,#2A1A10)",
+  "linear-gradient(135deg,#EAD6B4,#8C6141)",
+  "linear-gradient(135deg,#D2A86E,#3A2216)",
+  "linear-gradient(135deg,#BE9670,#3F2818)",
 ];
 
 const IMAGE_POOL: Record<string, string[]> = {
