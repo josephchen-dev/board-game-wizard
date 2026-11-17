@@ -133,7 +133,7 @@ function GameCard({ game, rank, onOpen }: { game: Game; rank: number; onOpen: (i
           <Star size={12} fill="white" aria-hidden="true" />
           <span aria-hidden="true">{game.rating.toFixed(1)}</span>
         </div>
-        <div className="text-app-ink-fg text-[24px] leading-[1.1] drop-shadow-[2px_2px_0_rgba(0,0,0,0.7)] relative z-10" aria-hidden="true">
+        <div className="text-app-ink-fg text-[24px] leading-[1.1] drop-shadow-[2px_2px_0_rgba(46,28,18,0.8)] relative z-10" aria-hidden="true">
           {game.name}
         </div>
       </div>

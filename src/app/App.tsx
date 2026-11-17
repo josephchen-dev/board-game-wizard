@@ -271,7 +271,7 @@ function Sidebar({
           <div className="text-[13px] opacity-80 mt-[4px]" aria-hidden="true">out of {GAMES.length} games</div>
           <div className="h-[6px] bg-app-ink-fg/20 mt-[16px]" aria-hidden="true">
             <div
-              className="h-full bg-app-positive transition-all"
+              className="h-full bg-app-accent transition-all"
               style={{ width: `${Math.min(100, (liveCount / GAMES.length) * 100)}%` }}
             />
           </div>

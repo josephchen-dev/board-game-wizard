@@ -71,10 +71,10 @@ export function GameDetailView({ game, onBack }: { game: Game; onBack: () => voi
                 </span>
               ))}
             </div>
-            <h1 className="text-app-ink-fg text-[48px] leading-[1.05] tracking-[-0.02em] drop-shadow-[2px_2px_0_rgba(0,0,0,0.7)]">
+            <h1 className="text-app-ink-fg text-[48px] leading-[1.05] tracking-[-0.02em] drop-shadow-[2px_2px_0_rgba(46,28,18,0.8)]">
               {game.name}
             </h1>
-            <p className="text-app-ink-fg text-[16px] drop-shadow-[1px_1px_0_rgba(0,0,0,0.7)]">
+            <p className="text-app-ink-fg text-[16px] drop-shadow-[1px_1px_0_rgba(46,28,18,0.8)]">
               {game.designer} · {game.year}
             </p>
           </div>
